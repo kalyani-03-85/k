@@ -1,0 +1,2041 @@
+{
+	"info": {
+		"_postman_id": "37e410cc-cf65-4bde-a886-d5b53b8a8feb",
+		"name": "API Bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45378619",
+		"_collection_link": "https://kalyanikajjam.postman.co/workspace/Kalyani-Kajjam's-Workspace~6bc8d384-7cc8-45ce-8c54-94381d05bf1a/collection/45378619-37e410cc-cf65-4bde-a886-d5b53b8a8feb?action=share&source=collection_link&creator=45378619"
+	},
+	"item": [
+		{
+			"name": "PostOperations",
+			"item": [
+				{
+					"name": "NegativeScenarios",
+					"item": [
+						{
+							"name": "User creates request body with plot number has special characters(_,$) at the end",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot$\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with contact number less than 10 digits",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 712345678,\r\n    \"userEmailId\": \"apitestin@gmail.com\",\r\n\r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with email id contains special characters",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456789,\r\n    \"userEmailId\": \"apitesting_@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \" \",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with plot number contains string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456784,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": 1234,\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with street in alpha numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456789,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"localstreet123\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with invalid userid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 2143,\r\n    \"userFirstName\": \"kalyani\",\r\n    \"userLastName\": \"test\",\r\n    \"userContactNumber\": 8123456789,\r\n    \"userEmailId\": \"_team04kalyani@gmail.com\",\r\n    \"creationTime\": \"2025-05-29T01:19:33.634+00:00\",\r\n    \"lastModTime\": \"2025-05-29T01:19:33.634+00:00\",\r\n    \"userAddress\": {\r\n        \"addressId\": 21399,\r\n        \"plotNumber\": \"plot-1\",\r\n        \"street\": \"local street\",\r\n        \"state\": \"nc\",\r\n        \"country\": \"us\",\r\n        \"zipCode\": 12344\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user creates request body with empty data",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"team\",\r\n  \"userLastName\": \"api\",\r\n  \"userContactNumber\": \"2468012456\",\r\n  \"userEmailId\": \"teamapi@gmail.com\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"plot-4\",\r\n    \"street\": \"forget street\",\r\n    \"state\": \"nh\",\r\n    \"country\": \"um\",\r\n    \"zipCode\": \"4567\"\r\n  }\r\n}"
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates street with alpha numeric values in request body",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"userFirstName\": \"kalyani\",\r\n    \"userLastName\": \"test\",\r\n    \"userContactNumber\": 8123456782,\r\n    \"userEmailId\": \"_team04kalyani@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n        \r\n        \"plotNumber\": \"plot-1\",\r\n        \"street\": \"localstreet123\",\r\n        \"state\": \"nc\",\r\n        \"country\": \"us\",\r\n        \"zipCode\": 12344\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with FirstName contains numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"12345\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with FirstName contains special characters",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api@test\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with LastName contains special characters",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"test@ing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with LastName contains alpha numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing123\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with LastName contains numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"123\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with contact number more than 10 digits",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 712345678234,\r\n    \"userEmailId\": \"apitestig@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with plotnumber contains string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with plot number contains numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"1234\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with FirstName contains alpha numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api123\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with street has special characters(_,$)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local@\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with state has special characters(_,$)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc@\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with state has numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": 123,\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with state contains alpha numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc123\",\r\n      \"country\": \"us\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body  with country contains numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456783,\r\n    \"userEmailId\": \"apitesting1@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": 123,\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with country contains special characters(_,$)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"usa@\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with country contains alpha numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"usa123\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with zipcode has special characters(_,$, etc)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"usa123\",\r\n      \"zipCode\": 12345@\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with zipcode in alpha numeric values",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"usa123\",\r\n      \"zipCode\": 12345abc\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with zipcode in string format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 7123456782,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"usa123\",\r\n      \"zipCode\": abcd\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request body with existing Contact number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"userFirstName\": \"api\",\r\n    \"userLastName\": \"testing\",\r\n    \"userContactNumber\": 8123456789,\r\n    \"userEmailId\": \"apitesting@gmail.com\",\r\n    \r\n    \"userAddress\": {\r\n      \r\n      \"plotNumber\": \"plot-1\",\r\n      \"street\": \"local street\",\r\n      \"state\": \"nc\",\r\n      \"country\": \"usa123\",\r\n      \"zipCode\": 12345\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createusers",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User creates request with invaild endpoints",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"team\",\r\n  \"userLastName\": \"api\",\r\n  \"userContactNumber\": \"2468012456\",\r\n  \"userEmailId\": \"teamapi@gmail.com\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"plot-4\",\r\n    \"street\": \"forget street\",\r\n    \"state\": \"nh\",\r\n    \"country\": \"um\",\r\n    \"zipCode\": \"4567\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createuser",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createuser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PositiveScenarios",
+					"item": [
+						{
+							"name": "User creates request body with valid endpoints",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"userId\", jsonData.userId);\r",
+											"pm.collectionVariables.set(\"userFirstName\", jsonData.userFirstName);\r",
+											"pm.collectionVariables.set(\"userLastName\", jsonData.userLastName);\r",
+											"pm.collectionVariables.set(\"userContactNumber\", jsonData.userContactNumber);\r",
+											"pm.collectionVariables.set(\"userEmailId\", jsonData.userEmailId);\r",
+											"pm.collectionVariables.set(\"plotNumber\", jsonData.userAddress.plotNumber);\r",
+											"pm.collectionVariables.set(\"street\", jsonData.userAddress.street);\r",
+											"pm.collectionVariables.set(\"state\", jsonData.userAddress.state);\r",
+											"pm.collectionVariables.set(\"country\", jsonData.userAddress.country);\r",
+											"pm.collectionVariables.set(\"zipCode\", jsonData.userAddress.zipCode);\r",
+											"const Ajv = require('ajv');\r",
+											"const ajv = new Ajv();\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"//pm.test(\"Status code name has Bad request\",() => {\r",
+											"   // pm.response.to.have.status(\"Bad Request\");\r",
+											"//});\r",
+											"\r",
+											"pm.test(\"Status text is Created\", () => {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Created\");\r",
+											"});\r",
+											"\r",
+											"pm.test (\"Content-Type header is present\", () => { \r",
+											"    pm.response.to.have.header (\"Content-Type\") ;\r",
+											"});\r",
+											"\r",
+											"pm.test (\"Content-Type header is application/json\", () => {\r",
+											"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+											"});\r",
+											"\r",
+											"var schema=\r",
+											"{\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"userId\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"userFirstName\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"userLastName\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"userContactNumber\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"userEmailId\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"creationTime\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"lastModTime\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"userAddress\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"addressId\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        },\r",
+											"        \"plotNumber\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"street\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"state\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"country\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"zipCode\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"addressId\",\r",
+											"        \"plotNumber\",\r",
+											"        \"street\",\r",
+											"        \"state\",\r",
+											"        \"country\",\r",
+											"        \"zipCode\"\r",
+											"      ]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"userId\",\r",
+											"    \"userFirstName\",\r",
+											"    \"userLastName\",\r",
+											"    \"userContactNumber\",\r",
+											"    \"userEmailId\",\r",
+											"    \"creationTime\",\r",
+											"    \"lastModTime\",\r",
+											"    \"userAddress\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test(\"Validate response schema\", function () {\r",
+											"  pm.expect(ajv.validate(jsonData, schema)).to.be.true;\r",
+											"});\r",
+											"\r",
+											"let requestBody = JSON.parse(pm.request.body.raw);\r",
+											"\r",
+											"pm.test(\"All required fields are present\", function () {\r",
+											"    pm.expect(requestBody).to.have.all.keys(\"userFirstName\", \"userLastName\", \"userContactNumber\", \"userEmailId\", \"userAddress\");\r",
+											"    pm.expect(requestBody.userAddress).to.have.all.keys(\"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Field types are correct\", function () {\r",
+											"    pm.expect(requestBody.userFirstName).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userLastName).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userContactNumber).to.be.a(\"number\");\r",
+											"    pm.expect(requestBody.userEmailId).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.plotNumber).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.street).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.state).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.country).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.zipCode).to.be.a(\"number\");\r",
+											"});\r",
+											"pm.test(\"Validating FirstName of the User\", () => {\r",
+											"    pm.expect(requestBody.userFirstName).to.equal(pm.variables.get(\"userFirstName\"));\r",
+											"});\r",
+											"pm.test(\"Validating LastName of the User\", () => {\r",
+											"    pm.expect(requestBody.userLastName).to.equal(pm.variables.get(\"userLastName\"));\r",
+											"});\r",
+											"pm.test(\"Validating ContactNumber of the User\", () => {\r",
+											"    pm.expect(requestBody.userContactNumber).to.equal(pm.variables.get(\"userContactNumber\"));\r",
+											"});\r",
+											"pm.test(\"Validating EmailId of the User\", () => {\r",
+											"    pm.expect(requestBody.userEmailId).to.equal(pm.variables.get(\"userEmailId\"));\r",
+											"});\r",
+											"pm.test(\"Validating plotNumber of the User\", () => {\r",
+											"    pm.expect(requestBody.userAddress.plotNumber).to.equal(pm.variables.get(\"plotNumber\"));\r",
+											"});\r",
+											"pm.test(\"Validating street of the User\", () => {\r",
+											"    pm.expect(requestBody.userAddress.street).to.equal(pm.variables.get(\"street\"));\r",
+											"});\r",
+											"pm.test(\"Validating country of the User\", () => {\r",
+											"        pm.expect(requestBody.userAddress.country).to.equal(pm.variables.get(\"country\"));\r",
+											"    });\r",
+											"    pm.test(\"Validating zipCode of the User\", () => {\r",
+											"        pm.expect(requestBody.userAddress.zipCode).to.equal(pm.variables.get(\"zipCode\"));\r",
+											" });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{userFirstName}}\",\r\n  \"userLastName\": \"{{userLastName}}\",\r\n  \"userContactNumber\": {{userContactNumber}},\r\n  \"userEmailId\": \"{{userEmailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}uap/createusers",
+									"host": [
+										"{{basicurl}}uap"
+									],
+									"path": [
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GetOperations",
+			"item": [
+				{
+					"name": "Get_AllUsers",
+					"item": [
+						{
+							"name": "PositiveScenarios",
+							"item": [
+								{
+									"name": "Get all users with valid endpoints",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200 OK\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"const jsonData = pm.response.json();\r",
+													"console.log(jsonData);\r",
+													"\r",
+													"pm.test(\"Content-Type header is present\",() =>{\r",
+													"    pm.response.to.have.header(\"Content-Type\");\r",
+													"});\r",
+													"//Validate the header value\r",
+													"pm.test(\"Content-Type header value is application/json\",()=>{\r",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.equal('application/json');\r",
+													"});\r",
+													"pm.test(\"Response time is less than 1000 ms\",()=>{\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"/*const expectedSchema = {\r",
+													"  \"type\": \"object\",\r",
+													"  \"properties\": {\r",
+													"    \"userAddress\": {\r",
+													"      \"type\": \"object\",\r",
+													"      \"properties\": {\r",
+													"        \"plotNumber\": {\r",
+													"          \"type\": \"string\"\r",
+													"        },\r",
+													"        \"street\": {\r",
+													"          \"type\": \"string\"\r",
+													"        },\r",
+													"        \"state\": {\r",
+													"          \"type\": \"string\"\r",
+													"        },\r",
+													"        \"country\": {\r",
+													"          \"type\": \"string\"\r",
+													"        },\r",
+													"        \"zipCode\": {\r",
+													"          \"type\": \"integer\"\r",
+													"        }\r",
+													"      },\r",
+													"      \"required\": [\r",
+													"        \"plotNumber\",\r",
+													"        \"street\",\r",
+													"        \"state\",\r",
+													"        \"country\",\r",
+													"        \"zipCode\"\r",
+													"      ]\r",
+													"    },\r",
+													"    \"userFirstName\": {\r",
+													"      \"type\": \"string\"\r",
+													"    },\r",
+													"    \"userLastName\": {\r",
+													"      \"type\": \"string\"\r",
+													"    },\r",
+													"    \"userContactNumber\": {\r",
+													"      \"type\": \"integer\"\r",
+													"    },\r",
+													"    \"userEmailId\": {\r",
+													"      \"type\": \"string\"\r",
+													"    }\r",
+													"  },\r",
+													"  \"required\": [\r",
+													"    \"userAddress\",\r",
+													"    \"userFirstName\",\r",
+													"    \"userLastName\",\r",
+													"    \"userContactNumber\",\r",
+													"    \"userEmailId\"\r",
+													"  ]\r",
+													"}\r",
+													"// Fixed the schema reference error\r",
+													"pm.test(\"Validate schema\", () => {\r",
+													"    pm.response.to.have.jsonSchema(expectedSchema);\r",
+													"});\r",
+													"pm.test(\"Test Data Type Of the Response\", () => {\r",
+													"    pm.expect(jsonData).to.be.an(\"object\");\r",
+													"    pm.expect(jsonData.userId).to.be.a(\"number\");\r",
+													"    pm.expect(jsonData.userFirstName).to.be.a(\"string\");\r",
+													"    pm.expect(jsonData.userLastName).to.be.a(\"string\");\r",
+													"    pm.expect(jsonData.userContactNumber).to.be.a(\"number\");\r",
+													"    pm.expect(jsonData.userEmailId).to.be.a(\"string\");\r",
+													"    });*/\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "userapi@2025",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "Numpy@gmail.com",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{basicurl}}uap/users/",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"users",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "NegativeScenarios",
+							"item": [
+								{
+									"name": "Get all users with invalid endpoints",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/user",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"user"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all users with invalid request",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/users/",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"users",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get_UserID",
+					"item": [
+						{
+							"name": "PositiveScenarios",
+							"item": [
+								{
+									"name": "Get user details by valid userID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "userapi@2025",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "Numpy@gmail.com",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{basicurl}}uap/users/27#532",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"users",
+												"27"
+											],
+											"query": [
+												{
+													"key": "user",
+													"value": null,
+													"disabled": true
+												}
+											],
+											"hash": "532"
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Negativescenarios",
+							"item": [
+								{
+									"name": "Get user with invalid user ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}uap/user/1",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"user",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user with alphanumeric userID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/user/21abc",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"user",
+												"21abc"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user with string userID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/user/abc",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"user",
+												"abc"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user with Zero userID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/user/0",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"user",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user with Negative userID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}uap/user/abc",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"user",
+												"abc"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user details with out userID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/user",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"user"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get_UserFirstName",
+					"item": [
+						{
+							"name": "PositiveScenarios",
+							"item": [
+								{
+									"name": "Get user details by valid userFirstName",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}uap/users/username/geetha",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"users",
+												"username",
+												"geetha"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "NegativeScenarios",
+							"item": [
+								{
+									"name": "Get user details by invalid userFirstName",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}/uap/users/username/kalyan",
+											"host": [
+												"{{basicurl}}"
+											],
+											"path": [
+												"uap",
+												"users",
+												"username",
+												"kalyan"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user details by userFirstName in alphanumeric format",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "userapi@2025",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "Numpy@gmail.com",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}uap/users/username/Numpy",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"users",
+												"username",
+												"Numpy"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get user details by userFirstName with special characters",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "userapi@2025",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "Numpy@gmail.com",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{basicurl}}uap/users/username/kal@yani",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"users",
+												"username",
+												"kal@yani"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get user details with out authorization",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{basicurl}}uap/user/27#532",
+							"host": [
+								"{{basicurl}}uap"
+							],
+							"path": [
+								"user",
+								"27"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"hash": "532"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PutOperations",
+			"item": [
+				{
+					"name": "PositiveScenarios",
+					"item": [
+						{
+							"name": "User updates request body with valid inputs",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n       \r\n        \"userFirstName\": \"kalyani\",\r\n        \"userLastName\": \"test\",\r\n        \"userContactNumber\": 7123456781,\r\n        \"userEmailId\": \"testkalyani@gmail.com\",\r\n       \r\n        \"userAddress\": {\r\n           \r\n            \"plotNumber\": \"plot-1\",\r\n            \"street\": \"local street\",\r\n            \"state\": \"nc\",\r\n            \"country\": \"us\",\r\n            \"zipCode\": 12345\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/updateuser/",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"updateuser",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "NegativeScenarios",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DeleteOperations",
+			"item": [
+				{
+					"name": "Delete_UserFirstName",
+					"item": [
+						{
+							"name": "PositiveScenarios",
+							"item": [
+								{
+									"name": "Delete user details by valid userName",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "userapi@2025",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "Numpy@gmail.com",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{basicurl}}uap/delete/john",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"delete",
+												"john"
+											],
+											"query": [
+												{
+													"key": "user",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "NegativeScenarios",
+							"item": []
+						}
+					]
+				},
+				{
+					"name": "Delete_UserID",
+					"item": [
+						{
+							"name": "PositiveScenarios",
+							"item": [
+								{
+									"name": "Delete user details by valid userID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "userapi@2025",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "Numpy@gmail.com",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{basicurl}}uap/deleteuser/:userId",
+											"host": [
+												"{{basicurl}}uap"
+											],
+											"path": [
+												"deleteuser",
+												":userId"
+											],
+											"query": [
+												{
+													"key": "user",
+													"value": null,
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "NegativeScenarios",
+							"item": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Post_DataDriven",
+			"item": [
+				{
+					"name": "PositiveScenarios",
+					"item": [
+						{
+							"name": "User creates request body with valid endpoints",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"userId\", jsonData.userId);\r",
+											"pm.collectionVariables.set(\"userFirstName\", jsonData.userFirstName);\r",
+											"pm.collectionVariables.set(\"userLastName\", jsonData.userLastName);\r",
+											"pm.collectionVariables.set(\"userContactNumber\", jsonData.userContactNumber);\r",
+											"pm.collectionVariables.set(\"userEmailId\", jsonData.userEmailId);\r",
+											"pm.collectionVariables.set(\"plotNumber\", jsonData.userAddress.plotNumber);\r",
+											"pm.collectionVariables.set(\"street\", jsonData.userAddress.street);\r",
+											"pm.collectionVariables.set(\"state\", jsonData.userAddress.state);\r",
+											"pm.collectionVariables.set(\"country\", jsonData.userAddress.country);\r",
+											"pm.collectionVariables.set(\"zipCode\", jsonData.userAddress.zipCode);\r",
+											"const Ajv = require('ajv');\r",
+											"const ajv = new Ajv();\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"//pm.test(\"Status code name has Bad request\",() => {\r",
+											"   // pm.response.to.have.status(\"Bad Request\");\r",
+											"//});\r",
+											"\r",
+											"pm.test(\"Status text is Created\", () => {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Created\");\r",
+											"});\r",
+											"\r",
+											"pm.test (\"Content-Type header is present\", () => { \r",
+											"    pm.response.to.have.header (\"Content-Type\") ;\r",
+											"});\r",
+											"\r",
+											"pm.test (\"Content-Type header is application/json\", () => {\r",
+											"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+											"});\r",
+											"\r",
+											"var schema=\r",
+											"{\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"userId\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"userFirstName\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"userLastName\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"userContactNumber\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"userEmailId\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"creationTime\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"lastModTime\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"userAddress\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"addressId\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        },\r",
+											"        \"plotNumber\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"street\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"state\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"country\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"zipCode\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"addressId\",\r",
+											"        \"plotNumber\",\r",
+											"        \"street\",\r",
+											"        \"state\",\r",
+											"        \"country\",\r",
+											"        \"zipCode\"\r",
+											"      ]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"userId\",\r",
+											"    \"userFirstName\",\r",
+											"    \"userLastName\",\r",
+											"    \"userContactNumber\",\r",
+											"    \"userEmailId\",\r",
+											"    \"creationTime\",\r",
+											"    \"lastModTime\",\r",
+											"    \"userAddress\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test(\"Validate response schema\", function () {\r",
+											"  pm.expect(ajv.validate(jsonData, schema)).to.be.true;\r",
+											"});\r",
+											"\r",
+											"let requestBody = JSON.parse(pm.request.body.raw);\r",
+											"\r",
+											"pm.test(\"All required fields are present\", function () {\r",
+											"    pm.expect(requestBody).to.have.all.keys(\"userFirstName\", \"userLastName\", \"userContactNumber\", \"userEmailId\", \"userAddress\");\r",
+											"    pm.expect(requestBody.userAddress).to.have.all.keys(\"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Field types are correct\", function () {\r",
+											"    pm.expect(requestBody.userFirstName).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userLastName).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userContactNumber).to.be.a(\"number\");\r",
+											"    pm.expect(requestBody.userEmailId).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.plotNumber).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.street).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.state).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.country).to.be.a(\"string\");\r",
+											"    pm.expect(requestBody.userAddress.zipCode).to.be.a(\"number\");\r",
+											"});\r",
+											"pm.test(\"Validating FirstName of the User\", () => {\r",
+											"    pm.expect(requestBody.userFirstName).to.equal(pm.variables.get(\"userFirstName\"));\r",
+											"});\r",
+											"pm.test(\"Validating LastName of the User\", () => {\r",
+											"    pm.expect(requestBody.userLastName).to.equal(pm.variables.get(\"userLastName\"));\r",
+											"});\r",
+											"pm.test(\"Validating ContactNumber of the User\", () => {\r",
+											"    pm.expect(requestBody.userContactNumber).to.equal(pm.variables.get(\"userContactNumber\"));\r",
+											"});\r",
+											"pm.test(\"Validating EmailId of the User\", () => {\r",
+											"    pm.expect(requestBody.userEmailId).to.equal(pm.variables.get(\"userEmailId\"));\r",
+											"});\r",
+											"pm.test(\"Validating plotNumber of the User\", () => {\r",
+											"    pm.expect(requestBody.userAddress.plotNumber).to.equal(pm.variables.get(\"plotNumber\"));\r",
+											"});\r",
+											"pm.test(\"Validating street of the User\", () => {\r",
+											"    pm.expect(requestBody.userAddress.street).to.equal(pm.variables.get(\"street\"));\r",
+											"});\r",
+											"pm.test(\"Validating country of the User\", () => {\r",
+											"        pm.expect(requestBody.userAddress.country).to.equal(pm.variables.get(\"country\"));\r",
+											"    });\r",
+											"    pm.test(\"Validating zipCode of the User\", () => {\r",
+											"        pm.expect(requestBody.userAddress.zipCode).to.equal(pm.variables.get(\"zipCode\"));\r",
+											" });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{userFirstName}}\",\r\n  \"userLastName\": \"{{userLastName}}\",\r\n  \"userContactNumber\": {{userContactNumber}},\r\n  \"userEmailId\": \"{{userEmailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}uap/createusers",
+									"host": [
+										"{{basicurl}}uap"
+									],
+									"path": [
+										"createusers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "NegativeScenarios",
+					"item": [
+						{
+							"name": "User creates request with invaild endpoints",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{userFirstName}}\",\r\n  \"userLastName\": \"{{userLastName}}\",\r\n  \"userContactNumber\": \"{{userContactNumber}}\",\r\n  \"userEmailId\": \"{{userEmailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": \"{{zipCode}}\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basicurl}}/uap/createuser",
+									"host": [
+										"{{basicurl}}"
+									],
+									"path": [
+										"uap",
+										"createuser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Numpy@gmail.com",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Numpy@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "basicurl",
+			"value": "https://userserviceapp-f5a54828541b.herokuapp.com/",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": ""
+		},
+		{
+			"key": "userFirstName",
+			"value": ""
+		},
+		{
+			"key": "userLastName",
+			"value": ""
+		},
+		{
+			"key": "userContactNumber",
+			"value": ""
+		},
+		{
+			"key": "userEmailId",
+			"value": ""
+		},
+		{
+			"key": "plotNumber",
+			"value": ""
+		},
+		{
+			"key": "street",
+			"value": ""
+		},
+		{
+			"key": "state",
+			"value": ""
+		},
+		{
+			"key": "country",
+			"value": ""
+		},
+		{
+			"key": "zipCode",
+			"value": ""
+		}
+	]
+}
